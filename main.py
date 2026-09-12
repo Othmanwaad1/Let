@@ -135,7 +135,7 @@ def kill_all(msg):
         kill_pid(pid)
     bot.send_message(msg.chat.id, "اوقفت كل العمليات")
 
-if name == "main":
+if __name__ == "__main__":
     while True:
         try:
             bot.polling(none_stop=True, timeout=60)
