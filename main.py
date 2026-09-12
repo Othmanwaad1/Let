@@ -102,10 +102,10 @@ def stop_script(msg):
     name = msg.text[len("ايقاف "):].strip()
     for pid, p in list(procs.items()):
         if p["name"] == name:
-            kill_pid(pid)bot.send_message(msg.chat.id, "اوقفت: " + name)
+            kill_pid(pid)
+            bot.send_message(msg.chat.id, "اوقفت: " + name)
             return
     bot.send_message(msg.chat.id, "لا يوجد تشغيل بهذا الاسم")
-
 @bot.message_handler(func=lambda m: m.text and m.text.startswith("حذف "))
 def delete_script(msg):
     if not is_admin(msg.chat.id):
