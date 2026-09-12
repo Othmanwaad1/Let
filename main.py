@@ -106,6 +106,7 @@ def stop_script(msg):
             bot.send_message(msg.chat.id, "اوقفت: " + name)
             return
     bot.send_message(msg.chat.id, "لا يوجد تشغيل بهذا الاسم")
+
 @bot.message_handler(func=lambda m: m.text and m.text.startswith("حذف "))
 def delete_script(msg):
     if not is_admin(msg.chat.id):
@@ -135,7 +136,7 @@ def kill_all(msg):
         kill_pid(pid)
     bot.send_message(msg.chat.id, "اوقفت كل العمليات")
 
-if __name__ == "__main__":
+if name == "main":
     while True:
         try:
             bot.polling(none_stop=True, timeout=60)
